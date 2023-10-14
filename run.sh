@@ -21,7 +21,7 @@ docker container run --rm -it \
     --env TREE_SITTER_HCL_REF="main" \
     emacs-29-bugreport-non-pgtk:latest
 
-echo "Using grammar at main with pgtk. This should succeed."
+echo "Using grammar at main with pgtk. This should FAIL."
 docker container run --rm -it \
     --env TREE_SITTER_HCL_REF="main" \
     emacs-29-bugreport-pgtk:latest
