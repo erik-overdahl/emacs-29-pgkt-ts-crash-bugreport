@@ -8,7 +8,8 @@
                       ,(getenv "TREE_SITTER_HCL_REF")
                       "src")))
 
-(treesit-install-language-grammar 'hcl)
+(unless (treesit-ready-p 'hcl)
+  (treesit-install-language-grammar 'hcl))
 
 (with-temp-buffer
   (when (string-equal "true" (getenv "PRINT_EMACS_INFO"))
