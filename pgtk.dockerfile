@@ -30,5 +30,6 @@ COPY test-files /test
 WORKDIR /test
 
 ENV TREE_SITTER_HCL_REF="main"
+ENV PRINT_EMACS_INFO="true"
 
 CMD ["sh", "-c", "emacs --batch -L . -l minimal-reproduce.el 2>&1"]

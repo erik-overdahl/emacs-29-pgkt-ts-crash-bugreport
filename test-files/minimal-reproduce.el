@@ -11,7 +11,8 @@
 (treesit-install-language-grammar 'hcl)
 
 (with-temp-buffer
-  (print-emacs-info (current-buffer))
+  (when (string-equal "true" (getenv "PRINT_EMACS_INFO"))
+    (print-emacs-info (current-buffer)))
   (insert-file-contents "example.hcl")
   ;; `treesit-parser-create' creates a parser for the buffer that is
   ;; then invoked lazily. Using `treesit-parse-string' to force parse.
