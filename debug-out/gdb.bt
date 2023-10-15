@@ -1,0 +1,344 @@
+backtrace:
+#0  0x00007f6eb2897884 in __pthread_kill_implementation () at /lib64/libc.so.6
+#1  0x00007f6eb2846afe in raise () at /lib64/libc.so.6
+#2  0x00007f6eb282f87f in abort () at /lib64/libc.so.6
+#3  0x00007f6eb283060f in _IO_peekc_locked.cold () at /lib64/libc.so.6
+#4  0x00007f6eb28a17b5 in  () at /lib64/libc.so.6
+#5  0x00007f6eb28a1a4c in munmap_chunk () at /lib64/libc.so.6
+#6  0x00007f6eb28a625a in free () at /lib64/libc.so.6
+#7  0x00007f6eb039c076 in deserialize () at /root/.emacs.d/tree-sitter/libtree-sitter-hcl.so
+#8  0x00007f6eb039d422 in tree_sitter_hcl_external_scanner_deserialize () at /root/.emacs.d/tree-sitter/libtree-sitter-hcl.so
+#9  0x00007f6eb29f7250 in ts_parser_parse () at /lib64/libtree-sitter.so.0
+#10 0x00000000005ea49d in treesit_ensure_parsed (parser=0x1ee376d) at treesit.c:1056
+        buffer = 0x1efebe0
+        treesit_parser = <optimized out>
+        tree = 0x0
+        input = {payload = 0x1ee3768, read = 0x5e6af7 <treesit_read_buffer>, encoding = TSInputEncodingUTF8}
+        new_tree = <optimized out>
+        root_node = {context = {20704592, 0, 0, 0}, id = 0x0, tree = 0x0}
+#11 Ftreesit_parser_root_node (parser=0x1ee376d) at treesit.c:1530
+        root_node = {context = {20704592, 0, 0, 0}, id = 0x0, tree = 0x0}
+#12 0x0000000000578fd6 in funcall_subr (subr=0xb0e900 <Streesit_parser_root_node>, numargs=numargs@entry=1, args=args@entry=0x7f6eb03d22f8) at eval.c:3034
+        argbuf = {0x13bed50, 0x0, 0x0, 0x1efebe5, 0x1efebe5, 0x7f6eb03d22f0, 0x1f565a7, 0x1}
+        a = <optimized out>
+        fun = <optimized out>
+#13 0x00000000005b9151 in exec_byte_code (fun=<optimized out>, fun@entry=0x1f0ad7d, args_template=<optimized out>, args_template@entry=514, nargs=<optimized out>, nargs@entry=2, args=<optimized out>, args@entry=0x7ffe52a94bd0) at bytecode.c:809
+        call_nargs = 1
+        call_fun = <optimized out>
+        template = <optimized out>
+        val = <optimized out>
+        call_args = 0x7f6eb03d22f8
+        original_fun = 0x7f6eafcbb618
+        bytecode = <optimized out>
+        op = 1
+        type = <optimized out>
+        targets = {0x5b8d55 <exec_byte_code+9744>, 0x5b8d70 <exec_byte_code+9771>, 0x5b8da2 <exec_byte_code+9821>, 0x5b8da4 <exec_byte_code+9823>, 0x5b8da6 <exec_byte_code+9825>, 0x5b8d70 <exec_byte_code+9771>, 0x5b8da8 <exec_byte_code+9827>, 0x5b8dde <exec_byte_code+9881>, 0x5b693d <exec_byte_code+504>, 0x5b69c4 <exec_byte_code+639>, 0x5b69c9 <exec_byte_code+644>, 0x5b69ce <exec_byte_code+649>, 0x5b69d3 <exec_byte_code+654>, 0x5b693d <exec_byte_code+504>, 0x5b69d8 <exec_byte_code+659>, 0x5b692a <exec_byte_code+485>, 0x5b6bf2 <exec_byte_code+1197>, 0x5b6c94 <exec_byte_code+1359>, 0x5b6c99 <exec_byte_code+1364>, 0x5b6c9e <exec_byte_code+1369>, 0x5b6ca3 <exec_byte_code+1374>, 0x5b6bf2 <exec_byte_code+1197>, 0x5b6cbe <exec_byte_code+1401>, 0x5b6ca8 <exec_byte_code+1379>, 0x5b6d11 <exec_byte_code+1484>, 0x5b6d56 <exec_byte_code+1553>, 0x5b6d58 <exec_byte_code+1555>, 0x5b6d5a <exec_byte_code+1557>, 0x5b6d5c <exec_byte_code+1559>, 0x5b6d11 <exec_byte_code+1484>, 0x5b6cf4 <exec_byte_code+1455>, 0x5b6cfe <exec_byte_code+1465>, 0x5b6d7b <exec_byte_code+1590>, 0x5b6ed4 <exec_byte_code+1935>, 0x5b6ed9 <exec_byte_code+1940>, 0x5b6ede <exec_byte_code+1945>, 0x5b6ee3 <exec_byte_code+1950>, 0x5b6d7b <exec_byte_code+1590>, 0x5b6d5e <exec_byte_code+1561>, 0x5b6d68 <exec_byte_code+1571>, 0x5b7006 <exec_byte_code+2241>, 0x5b704a <exec_byte_code+2309>, 0x5b704c <exec_byte_code+2311>, 0x5b704e <exec_byte_code+2313>, 0x5b7050 <exec_byte_code+2315>, 0x5b7006 <exec_byte_code+2241>, 0x5b6fe9 <exec_byte_code+2212>, 0x5b6ff3 <exec_byte_code+2222>, 0x5b74a9 <exec_byte_code+3428>, 0x5b7445 <exec_byte_code+3328>, 0x5b73e0 <exec_byte_code+3227>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b7601 <exec_byte_code+3772>, 0x5b768f <exec_byte_code+3914>, 0x5b7700 <exec_byte_code+4027>, 0x5b773c <exec_byte_code+4087>, 0x5b7778 <exec_byte_code+4147>, 0x5b6a75 <exec_byte_code+816>, 0x5b6b7b <exec_byte_code+1078>, 0x5b77b9 <exec_byte_code+4212>, 0x5b6a37 <exec_byte_code+754>, 0x5b6bb4 <exec_byte_code+1135>, 0x5b77e4 <exec_byte_code+4255>, 0x5b781d <exec_byte_code+4312>, 0x5b7846 <exec_byte_code+4353>, 0x5b787f <exec_byte_code+4410>, 0x5b78b5 <exec_byte_code+4464>, 0x5b792d <exec_byte_code+4584>, 0x5b7956 <exec_byte_code+4625>, 0x5b79df <exec_byte_code+4762>, 0x5b7a6f <exec_byte_code+4906>, 0x5b7a98 <exec_byte_code+4947>, 0x5b7ac1 <exec_byte_code+4988>, 0x5b7afa <exec_byte_code+5045>, 0x5b7b33 <exec_byte_code+5102>, 0x5b7b6c <exec_byte_code+5159>, 0x5b7ba9 <exec_byte_code+5220>, 0x5b7bdc <exec_byte_code+5271>, 0x5b7c0f <exec_byte_code+5322>, 0x5b7c80 <exec_byte_code+5435>, 0x5b7cd4 <exec_byte_code+5519>, 0x5b7d28 <exec_byte_code+5603>, 0x5b7d85 <exec_byte_code+5696>, 0x5b7dea <exec_byte_code+5797>, 0x5b7e4f <exec_byte_code+5898>, 0x5b7eb4 <exec_byte_code+5999>, 0x5b7f19 <exec_byte_code+6100>, 0x5b7f8f <exec_byte_code+6218>, 0x5b7fed <exec_byte_code+6312>, 0x5b8064 <exec_byte_code+6431>, 0x5b80c8 <exec_byte_code+6531>, 0x5b812c <exec_byte_code+6631>, 0x5b828a <exec_byte_code+6981>, 0x5b72ed <exec_byte_code+2984>, 0x5b82cd <exec_byte_code+7048>, 0x5b82f6 <exec_byte_code+7089>, 0x5b8362 <exec_byte_code+7197>, 0x5b83a5 <exec_byte_code+7264>, 0x5b83e8 <exec_byte_code+7331>, 0x5b8411 <exec_byte_code+7372>, 0x5b843c <exec_byte_code+7415>, 0x5b8467 <exec_byte_code+7458>, 0x5b849a <exec_byte_code+7509>, 0x5b8d55 <exec_byte_code+9744>, 0x5b84c8 <exec_byte_code+7555>, 0x5b84f3 <exec_byte_code+7598>, 0x5b851e <exec_byte_code+7641>, 0x5b8549 <exec_byte_code+7684>, 0x5b8574 <exec_byte_code+7727>, 0x5b859f <exec_byte_code+7770>, 0x5b72ed <exec_byte_code+2984>, 0x5b8d55 <exec_byte_code+9744>, 0x5b85c8 <exec_byte_code+7811>, 0x5b8606 <exec_byte_code+7873>, 0x5b862f <exec_byte_code+7914>, 0x5b8658 <exec_byte_code+7955>, 0x5b8691 <exec_byte_code+8012>, 0x5b86ca <exec_byte_code+8069>, 0x5b86f3 <exec_byte_code+8110>, 0x5b871c <exec_byte_code+8151>, 0x5b8755 <exec_byte_code+8208>, 0x5b878e <exec_byte_code+8265>, 0x5b87c7 <exec_byte_code+8322>, 0x5b87f2 <exec_byte_code+8365>, 0x5b8d55 <exec_byte_code+9744>, 0x5b728f <exec_byte_code+2890>, 0x5b7052 <exec_byte_code+2317>, 0x5b69e5 <exec_byte_code+672>, 0x5b70d0 <exec_byte_code+2443>, 0x5b7122 <exec_byte_code+2525>, 0x5b716d <exec_byte_code+2600>, 0x5b71b8 <exec_byte_code+2675>, 0x5b7270 <exec_byte_code+2859>, 0x5b6ccb <exec_byte_code+1414>, 0x5b72ce <exec_byte_code+2953>, 0x5b7319 <exec_byte_code+3028>, 0x5b7376 <exec_byte_code+3121>, 0x5b73a2 <exec_byte_code+3165>, 0x5b74d6 <exec_byte_code+3473>, 0x5b7522 <exec_byte_code+3549>, 0x5b755f <exec_byte_code+3610>, 0x5b75a8 <exec_byte_code+3683>, 0x5b8d55 <exec_byte_code+9744>, 0x5b881b <exec_byte_code+8406>, 0x5b8858 <exec_byte_code+8467>, 0x5b8881 <exec_byte_code+8508>, 0x5b88aa <exec_byte_code+8549>, 0x5b88d3 <exec_byte_code+8590>, 0x5b88fc <exec_byte_code+8631>, 0x5b8935 <exec_byte_code+8688>, 0x5b896e <exec_byte_code+8745>, 0x5b89a7 <exec_byte_code+8802>, 0x5b89e0 <exec_byte_code+8859>, 0x5b8a70 <exec_byte_code+9003>, 0x5b8aa9 <exec_byte_code+9060>, 0x5b8ae2 <exec_byte_code+9117>, 0x5b8b0b <exec_byte_code+9158>, 0x5b8b70 <exec_byte_code+9259>, 0x5b8bd5 <exec_byte_code+9360>, 0x5b8c0e <exec_byte_code+9417>, 0x5b8c47 <exec_byte_code+9474>, 0x5b81a6 <exec_byte_code+6753>, 0x5b8226 <exec_byte_code+6881>, 0x5b8c7a <exec_byte_code+9525>, 0x5b8cea <exec_byte_code+9637>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b78ef <exec_byte_code+4522>, 0x5b7c42 <exec_byte_code+5373>, 0x5b8324 <exec_byte_code+7135>, 0x5b8e1d <exec_byte_code+9944>, 0x5b8e5b <exec_byte_code+10006>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8ea4 <exec_byte_code+10079>, 0x5b8eeb <exec_byte_code+10150>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b902b <exec_byte_code+10470> <repeats 64 times>}
+        quitcounter = 1 '\001'
+        bc = 0xaf8930 <main_thread+496>
+        top = 0x7f6eb03d22f0
+        pc = 0x1f565ad "*\207"
+        bytestr = <optimized out>
+        vector = <optimized out>
+        maxdepth = <optimized out>
+        bytestr_length = <optimized out>
+        vectorp = 0x1f0ad40
+        max_stack = <optimized out>
+        frame_base = <optimized out>
+        fp = <optimized out>
+        bytestr_data = <optimized out>
+        rest = <optimized out>
+        mandatory = <optimized out>
+        nonrest = <optimized out>
+        pushedargs = <optimized out>
+        result = <optimized out>
+#14 0x000000000057abab in fetch_and_exec_byte_code (args=0x7ffe52a94bd0, nargs=2, args_template=514, fun=0x1f0ad7d) at eval.c:3081
+        val = <optimized out>
+        syms_left = <optimized out>
+        next = <optimized out>
+        lexenv = <optimized out>
+        i = <optimized out>
+        optional = <optimized out>
+        rest = <optimized out>
+        previous_rest = <optimized out>
+#15 funcall_lambda (fun=fun@entry=0x1f0ad7d, nargs=nargs@entry=2, arg_vector=arg_vector@entry=0x7ffe52a94bd0) at eval.c:3153
+        val = <optimized out>
+        syms_left = <optimized out>
+        next = <optimized out>
+        lexenv = <optimized out>
+        i = <optimized out>
+        optional = <optimized out>
+        rest = <optimized out>
+        previous_rest = <optimized out>
+#16 0x000000000057b850 in apply_lambda (fun=fun@entry=0x1f0ad7d, args=<optimized out>, count=count@entry=...) at eval.c:3103
+        arg_vector = 0x7ffe52a94bd0
+        tem = <optimized out>
+        sa_avail = <optimized out>
+        sa_count = {bytes = 1344}
+        numargs = 2
+        args_left = 0x0
+#17 0x000000000057a478 in eval_sub (form=<optimized out>) at eval.c:2545
+        original_fun = 0x138ec10
+        original_args = 0x20998d3
+        fun = 0x1f0ad7d
+        val = <optimized out>
+        funcar = <optimized out>
+        argvals = {0x1f88654, 0x0, 0x0, 0x0, 0x0, 0x586b04 <nconc2+26>, 0x7f6eb0d946a3, 0x2099013}
+#18 0x000000000057a9f9 in Fprogn (body=0x2099963) at eval.c:436
+        form = <optimized out>
+        val = 0x2099093
+#19 0x000000000057a198 in eval_sub (form=<optimized out>) at eval.c:2449
+        args_left = 0x20995d3
+        numargs = 4
+        original_fun = 0xcf90
+        original_args = 0x20995d3
+        fun = 0xb084c5 <Sprogn+5>
+        val = <optimized out>
+        funcar = <optimized out>
+        argvals = {0x4c0, 0x564818 <swap_in_symval_forwarding+162>, 0x1, 0x1f04360, 0xb80120 <globals>, 0x56499b <find_symbol_value+181>, 0x7f6eafd89978, 0x5649a6 <Fsymbol_value+9>}
+#20 0x000000000057c1f0 in Funwind_protect (args=0x20996d3) at /emacs/src/lisp.h:1523
+        val = <optimized out>
+#21 0x000000000057a198 in eval_sub (form=<optimized out>) at eval.c:2449
+        args_left = 0x20996d3
+        numargs = 2
+        original_fun = 0x7f6eafcc0eb0
+        original_args = 0x20996d3
+        fun = 0xb07f85 <Sunwind_protect+5>
+        val = <optimized out>
+        funcar = <optimized out>
+        argvals = {0x1f410ed, 0x3, 0xb8fdf0 <lispsym+52752>, 0x7f6eb081e708, 0x7ffe52a94e50, 0x2, 0xce10, 0x0}
+#22 0x000000000057a9f9 in Fprogn (body=0x0, body@entry=0x2099793) at eval.c:436
+        form = <optimized out>
+        val = 0x1f410ed
+#23 0x00000000005682c0 in Fsave_current_buffer (args=0x2099793) at editfns.c:874
+#24 0x000000000057a198 in eval_sub (form=<optimized out>) at eval.c:2449
+        args_left = 0x2099793
+        numargs = 2
+        original_fun = 0x7f6eafcc0df0
+        original_args = 0x2099793
+        fun = 0xb07345 <Ssave_current_buffer+5>
+        val = <optimized out>
+        funcar = <optimized out>
+        argvals = {0xb8c3a0 <lispsym+37824>, 0x7f6eb081e708, 0x2099033, 0x1, 0x93c0, 0x565581 <set_internal+1365>, 0x540, 0x5b7030 <exec_byte_code+2283>}
+#25 0x000000000057a9f9 in Fprogn (body=0x0) at eval.c:436
+        form = <optimized out>
+        val = 0x0
+#26 0x000000000057bc88 in Flet (args=0x20997c3) at /emacs/src/lisp.h:1529
+        temps = 0x7ffe52a94f70
+        tem = <optimized out>
+        lexenv = 0x2099033
+        elt = <optimized out>
+        count = {bytes = 1120}
+        argnum = <optimized out>
+        sa_avail = <optimized out>
+        sa_count = {bytes = 1120}
+        varlist = <optimized out>
+        varlist_len = <optimized out>
+        nvars = <optimized out>
+#27 0x000000000057a198 in eval_sub (form=<optimized out>) at eval.c:2449
+        args_left = 0x20997c3
+        numargs = 2
+        original_fun = 0x9e70
+        original_args = 0x20997c3
+        fun = 0xb08105 <Slet+5>
+        val = <optimized out>
+        funcar = <optimized out>
+        argvals = {0x400000003f000000, 0x57b13b <funcall_general+337>, 0x0, 0x2, 0x1, 0x2, 0x7ffe52a950b0, 0x440}
+#28 0x000000000059e2a9 in readevalloop_eager_expand_eval (val=<optimized out>, val@entry=0x2099f93, macroexpand=macroexpand@entry=0x7f6eb003f2e0) at lread.c:2164
+#29 0x00000000005a5743 in readevalloop (readcharfun=readcharfun@entry=0x1f254b5, infile0=infile0@entry=0x0, sourcename=sourcename@entry=0x1f05414, printflag=printflag@entry=false, unibyte=unibyte@entry=0x0, readfun=readfun@entry=0x0, start=0x0, end=<optimized out>) at lread.c:2348
+        c = <optimized out>
+        val = 0x2099f93
+        b = 0x1f254b0
+        continue_reading_p = true
+        lex_bound = <optimized out>
+        whole_buffer = true
+        first_sexp = <optimized out>
+        macroexpand = 0x7f6eb003f2e0
+#30 0x00000000005a6651 in Feval_buffer (buffer=<optimized out>, printflag=0x0, filename=0x1f05414, unibyte=0x0, do_allow_print=<optimized out>) at lread.c:2421
+        tem = <optimized out>
+        buf = 0x1f254b5
+#31 0x0000000000579036 in funcall_subr (subr=0xb0b080 <Seval_buffer>, numargs=numargs@entry=5, args=args@entry=0x7f6eb03d2290) at eval.c:3042
+        argbuf = {0x7f6eb0f752ab, 0x7f6eb08b1fe0, 0x7f6eafd2f000, 0x0, 0x1e85fd0, 0x7f6eafcd4cc0, 0x300, 0x576178 <specbind+374>}
+        a = <optimized out>
+        fun = <optimized out>
+#32 0x00000000005b9151 in exec_byte_code (fun=<optimized out>, fun@entry=0x7f6eb0b5e725, args_template=<optimized out>, args_template@entry=1282, nargs=<optimized out>, nargs@entry=4, args=<optimized out>, args@entry=0x7ffe52a954c8) at bytecode.c:809
+        call_nargs = 5
+        call_fun = <optimized out>
+        template = <optimized out>
+        val = <optimized out>
+        call_args = 0x7f6eb03d2290
+        original_fun = 0x7f6eaffdb680
+        bytecode = <optimized out>
+        op = 5
+        type = <optimized out>
+        targets = {0x5b8d55 <exec_byte_code+9744>, 0x5b8d70 <exec_byte_code+9771>, 0x5b8da2 <exec_byte_code+9821>, 0x5b8da4 <exec_byte_code+9823>, 0x5b8da6 <exec_byte_code+9825>, 0x5b8d70 <exec_byte_code+9771>, 0x5b8da8 <exec_byte_code+9827>, 0x5b8dde <exec_byte_code+9881>, 0x5b693d <exec_byte_code+504>, 0x5b69c4 <exec_byte_code+639>, 0x5b69c9 <exec_byte_code+644>, 0x5b69ce <exec_byte_code+649>, 0x5b69d3 <exec_byte_code+654>, 0x5b693d <exec_byte_code+504>, 0x5b69d8 <exec_byte_code+659>, 0x5b692a <exec_byte_code+485>, 0x5b6bf2 <exec_byte_code+1197>, 0x5b6c94 <exec_byte_code+1359>, 0x5b6c99 <exec_byte_code+1364>, 0x5b6c9e <exec_byte_code+1369>, 0x5b6ca3 <exec_byte_code+1374>, 0x5b6bf2 <exec_byte_code+1197>, 0x5b6cbe <exec_byte_code+1401>, 0x5b6ca8 <exec_byte_code+1379>, 0x5b6d11 <exec_byte_code+1484>, 0x5b6d56 <exec_byte_code+1553>, 0x5b6d58 <exec_byte_code+1555>, 0x5b6d5a <exec_byte_code+1557>, 0x5b6d5c <exec_byte_code+1559>, 0x5b6d11 <exec_byte_code+1484>, 0x5b6cf4 <exec_byte_code+1455>, 0x5b6cfe <exec_byte_code+1465>, 0x5b6d7b <exec_byte_code+1590>, 0x5b6ed4 <exec_byte_code+1935>, 0x5b6ed9 <exec_byte_code+1940>, 0x5b6ede <exec_byte_code+1945>, 0x5b6ee3 <exec_byte_code+1950>, 0x5b6d7b <exec_byte_code+1590>, 0x5b6d5e <exec_byte_code+1561>, 0x5b6d68 <exec_byte_code+1571>, 0x5b7006 <exec_byte_code+2241>, 0x5b704a <exec_byte_code+2309>, 0x5b704c <exec_byte_code+2311>, 0x5b704e <exec_byte_code+2313>, 0x5b7050 <exec_byte_code+2315>, 0x5b7006 <exec_byte_code+2241>, 0x5b6fe9 <exec_byte_code+2212>, 0x5b6ff3 <exec_byte_code+2222>, 0x5b74a9 <exec_byte_code+3428>, 0x5b7445 <exec_byte_code+3328>, 0x5b73e0 <exec_byte_code+3227>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b7601 <exec_byte_code+3772>, 0x5b768f <exec_byte_code+3914>, 0x5b7700 <exec_byte_code+4027>, 0x5b773c <exec_byte_code+4087>, 0x5b7778 <exec_byte_code+4147>, 0x5b6a75 <exec_byte_code+816>, 0x5b6b7b <exec_byte_code+1078>, 0x5b77b9 <exec_byte_code+4212>, 0x5b6a37 <exec_byte_code+754>, 0x5b6bb4 <exec_byte_code+1135>, 0x5b77e4 <exec_byte_code+4255>, 0x5b781d <exec_byte_code+4312>, 0x5b7846 <exec_byte_code+4353>, 0x5b787f <exec_byte_code+4410>, 0x5b78b5 <exec_byte_code+4464>, 0x5b792d <exec_byte_code+4584>, 0x5b7956 <exec_byte_code+4625>, 0x5b79df <exec_byte_code+4762>, 0x5b7a6f <exec_byte_code+4906>, 0x5b7a98 <exec_byte_code+4947>, 0x5b7ac1 <exec_byte_code+4988>, 0x5b7afa <exec_byte_code+5045>, 0x5b7b33 <exec_byte_code+5102>, 0x5b7b6c <exec_byte_code+5159>, 0x5b7ba9 <exec_byte_code+5220>, 0x5b7bdc <exec_byte_code+5271>, 0x5b7c0f <exec_byte_code+5322>, 0x5b7c80 <exec_byte_code+5435>, 0x5b7cd4 <exec_byte_code+5519>, 0x5b7d28 <exec_byte_code+5603>, 0x5b7d85 <exec_byte_code+5696>, 0x5b7dea <exec_byte_code+5797>, 0x5b7e4f <exec_byte_code+5898>, 0x5b7eb4 <exec_byte_code+5999>, 0x5b7f19 <exec_byte_code+6100>, 0x5b7f8f <exec_byte_code+6218>, 0x5b7fed <exec_byte_code+6312>, 0x5b8064 <exec_byte_code+6431>, 0x5b80c8 <exec_byte_code+6531>, 0x5b812c <exec_byte_code+6631>, 0x5b828a <exec_byte_code+6981>, 0x5b72ed <exec_byte_code+2984>, 0x5b82cd <exec_byte_code+7048>, 0x5b82f6 <exec_byte_code+7089>, 0x5b8362 <exec_byte_code+7197>, 0x5b83a5 <exec_byte_code+7264>, 0x5b83e8 <exec_byte_code+7331>, 0x5b8411 <exec_byte_code+7372>, 0x5b843c <exec_byte_code+7415>, 0x5b8467 <exec_byte_code+7458>, 0x5b849a <exec_byte_code+7509>, 0x5b8d55 <exec_byte_code+9744>, 0x5b84c8 <exec_byte_code+7555>, 0x5b84f3 <exec_byte_code+7598>, 0x5b851e <exec_byte_code+7641>, 0x5b8549 <exec_byte_code+7684>, 0x5b8574 <exec_byte_code+7727>, 0x5b859f <exec_byte_code+7770>, 0x5b72ed <exec_byte_code+2984>, 0x5b8d55 <exec_byte_code+9744>, 0x5b85c8 <exec_byte_code+7811>, 0x5b8606 <exec_byte_code+7873>, 0x5b862f <exec_byte_code+7914>, 0x5b8658 <exec_byte_code+7955>, 0x5b8691 <exec_byte_code+8012>, 0x5b86ca <exec_byte_code+8069>, 0x5b86f3 <exec_byte_code+8110>, 0x5b871c <exec_byte_code+8151>, 0x5b8755 <exec_byte_code+8208>, 0x5b878e <exec_byte_code+8265>, 0x5b87c7 <exec_byte_code+8322>, 0x5b87f2 <exec_byte_code+8365>, 0x5b8d55 <exec_byte_code+9744>, 0x5b728f <exec_byte_code+2890>, 0x5b7052 <exec_byte_code+2317>, 0x5b69e5 <exec_byte_code+672>, 0x5b70d0 <exec_byte_code+2443>, 0x5b7122 <exec_byte_code+2525>, 0x5b716d <exec_byte_code+2600>, 0x5b71b8 <exec_byte_code+2675>, 0x5b7270 <exec_byte_code+2859>, 0x5b6ccb <exec_byte_code+1414>, 0x5b72ce <exec_byte_code+2953>, 0x5b7319 <exec_byte_code+3028>, 0x5b7376 <exec_byte_code+3121>, 0x5b73a2 <exec_byte_code+3165>, 0x5b74d6 <exec_byte_code+3473>, 0x5b7522 <exec_byte_code+3549>, 0x5b755f <exec_byte_code+3610>, 0x5b75a8 <exec_byte_code+3683>, 0x5b8d55 <exec_byte_code+9744>, 0x5b881b <exec_byte_code+8406>, 0x5b8858 <exec_byte_code+8467>, 0x5b8881 <exec_byte_code+8508>, 0x5b88aa <exec_byte_code+8549>, 0x5b88d3 <exec_byte_code+8590>, 0x5b88fc <exec_byte_code+8631>, 0x5b8935 <exec_byte_code+8688>, 0x5b896e <exec_byte_code+8745>, 0x5b89a7 <exec_byte_code+8802>, 0x5b89e0 <exec_byte_code+8859>, 0x5b8a70 <exec_byte_code+9003>, 0x5b8aa9 <exec_byte_code+9060>, 0x5b8ae2 <exec_byte_code+9117>, 0x5b8b0b <exec_byte_code+9158>, 0x5b8b70 <exec_byte_code+9259>, 0x5b8bd5 <exec_byte_code+9360>, 0x5b8c0e <exec_byte_code+9417>, 0x5b8c47 <exec_byte_code+9474>, 0x5b81a6 <exec_byte_code+6753>, 0x5b8226 <exec_byte_code+6881>, 0x5b8c7a <exec_byte_code+9525>, 0x5b8cea <exec_byte_code+9637>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b78ef <exec_byte_code+4522>, 0x5b7c42 <exec_byte_code+5373>, 0x5b8324 <exec_byte_code+7135>, 0x5b8e1d <exec_byte_code+9944>, 0x5b8e5b <exec_byte_code+10006>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8ea4 <exec_byte_code+10079>, 0x5b8eeb <exec_byte_code+10150>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b902b <exec_byte_code+10470> <repeats 64 times>}
+        quitcounter = 1 '\001'
+        bc = 0xaf8930 <main_thread+496>
+        top = 0x7f6eb03d2288
+        pc = 0x7f6eb1066825 "\210.\006\266\005\334\006\b!\210\004\204\335"
+        bytestr = <optimized out>
+        vector = <optimized out>
+        maxdepth = <optimized out>
+        bytestr_length = <optimized out>
+        vectorp = 0x7f6eb0b5e768
+        max_stack = <optimized out>
+        frame_base = <optimized out>
+        fp = <optimized out>
+        bytestr_data = <optimized out>
+        rest = <optimized out>
+        mandatory = <optimized out>
+        nonrest = <optimized out>
+        pushedargs = <optimized out>
+        result = <optimized out>
+#33 0x000000000057abab in fetch_and_exec_byte_code (args=0x7ffe52a954c8, nargs=4, args_template=1282, fun=0x7f6eb0b5e725) at eval.c:3081
+        val = <optimized out>
+        syms_left = <optimized out>
+        next = <optimized out>
+        lexenv = <optimized out>
+        i = <optimized out>
+        optional = <optimized out>
+        rest = <optimized out>
+        previous_rest = <optimized out>
+#34 funcall_lambda (fun=0x7f6eb0b5e725, nargs=nargs@entry=4, arg_vector=arg_vector@entry=0x7ffe52a954c8) at eval.c:3153
+        val = <optimized out>
+        syms_left = <optimized out>
+        next = <optimized out>
+        lexenv = <optimized out>
+        i = <optimized out>
+        optional = <optimized out>
+        rest = <optimized out>
+        previous_rest = <optimized out>
+#35 0x000000000057b13b in funcall_general (fun=<optimized out>, numargs=numargs@entry=4, args=args@entry=0x7ffe52a954c8) at eval.c:2945
+        original_fun = 0x7f6eaffdb710
+#36 0x0000000000576bc5 in Ffuncall (nargs=nargs@entry=5, args=args@entry=0x7ffe52a954c0) at eval.c:2995
+        val = <optimized out>
+#37 0x00000000005a5ff6 in call4 (arg4=0x30, arg3=<optimized out>, arg2=0x1f05414, arg1=0x1f05414, fn=<optimized out>) at /emacs/src/lisp.h:3270
+        val = <optimized out>
+        stream = 0x0
+        fd = 4
+        found = 0x1f05414
+        efound = <optimized out>
+        hist_file_name = 0x1f05414
+        newer = false
+        compiled = false
+        handler = <optimized out>
+        fmode = 0x65544d "r"
+        version = <optimized out>
+        no_native = <optimized out>
+        is_module = false
+        is_native_elisp = false
+        found_eff = 0x1f05414
+        is_elc = false
+        input = {stream = 0x0, lookahead = 96 '`', buf = ";,e"}
+#38 Fload (file=0x1f051f4, noerror=<optimized out>, nomessage=<optimized out>, nosuffix=<optimized out>, must_suffix=<optimized out>) at lread.c:1484
+        val = <optimized out>
+        stream = 0x0
+        fd = 4
+        found = 0x1f05414
+        efound = <optimized out>
+        hist_file_name = 0x1f05414
+        newer = false
+        compiled = false
+        handler = <optimized out>
+        fmode = 0x65544d "r"
+        version = <optimized out>
+        no_native = <optimized out>
+        is_module = false
+        is_native_elisp = false
+        found_eff = 0x1f05414
+        is_elc = false
+        input = {stream = 0x0, lookahead = 96 '`', buf = ";,e"}
+#39 0x0000000000579036 in funcall_subr (subr=0xb0b100 <Sload>, numargs=numargs@entry=3, args=args@entry=0x7f6eb03d21b0) at eval.c:3042
+        argbuf = {0x1f051f4, 0x0, 0x30, 0x0, 0x0, 0x7f6eb081e70d, 0xd3, 0xd1}
+        a = <optimized out>
+        fun = <optimized out>
+#40 0x00000000005b9151 in exec_byte_code (fun=<optimized out>, fun@entry=0x7f6eb0a00c45, args_template=<optimized out>, args_template@entry=0, nargs=<optimized out>, nargs@entry=0, args=<optimized out>, args@entry=0x7ffe52a95740) at bytecode.c:809
+        call_nargs = 3
+        call_fun = <optimized out>
+        template = <optimized out>
+        val = <optimized out>
+        call_args = 0x7f6eb03d21b0
+        original_fun = 0xa2f0
+        bytecode = <optimized out>
+        op = 3
+        type = <optimized out>
+        targets = {0x5b8d55 <exec_byte_code+9744>, 0x5b8d70 <exec_byte_code+9771>, 0x5b8da2 <exec_byte_code+9821>, 0x5b8da4 <exec_byte_code+9823>, 0x5b8da6 <exec_byte_code+9825>, 0x5b8d70 <exec_byte_code+9771>, 0x5b8da8 <exec_byte_code+9827>, 0x5b8dde <exec_byte_code+9881>, 0x5b693d <exec_byte_code+504>, 0x5b69c4 <exec_byte_code+639>, 0x5b69c9 <exec_byte_code+644>, 0x5b69ce <exec_byte_code+649>, 0x5b69d3 <exec_byte_code+654>, 0x5b693d <exec_byte_code+504>, 0x5b69d8 <exec_byte_code+659>, 0x5b692a <exec_byte_code+485>, 0x5b6bf2 <exec_byte_code+1197>, 0x5b6c94 <exec_byte_code+1359>, 0x5b6c99 <exec_byte_code+1364>, 0x5b6c9e <exec_byte_code+1369>, 0x5b6ca3 <exec_byte_code+1374>, 0x5b6bf2 <exec_byte_code+1197>, 0x5b6cbe <exec_byte_code+1401>, 0x5b6ca8 <exec_byte_code+1379>, 0x5b6d11 <exec_byte_code+1484>, 0x5b6d56 <exec_byte_code+1553>, 0x5b6d58 <exec_byte_code+1555>, 0x5b6d5a <exec_byte_code+1557>, 0x5b6d5c <exec_byte_code+1559>, 0x5b6d11 <exec_byte_code+1484>, 0x5b6cf4 <exec_byte_code+1455>, 0x5b6cfe <exec_byte_code+1465>, 0x5b6d7b <exec_byte_code+1590>, 0x5b6ed4 <exec_byte_code+1935>, 0x5b6ed9 <exec_byte_code+1940>, 0x5b6ede <exec_byte_code+1945>, 0x5b6ee3 <exec_byte_code+1950>, 0x5b6d7b <exec_byte_code+1590>, 0x5b6d5e <exec_byte_code+1561>, 0x5b6d68 <exec_byte_code+1571>, 0x5b7006 <exec_byte_code+2241>, 0x5b704a <exec_byte_code+2309>, 0x5b704c <exec_byte_code+2311>, 0x5b704e <exec_byte_code+2313>, 0x5b7050 <exec_byte_code+2315>, 0x5b7006 <exec_byte_code+2241>, 0x5b6fe9 <exec_byte_code+2212>, 0x5b6ff3 <exec_byte_code+2222>, 0x5b74a9 <exec_byte_code+3428>, 0x5b7445 <exec_byte_code+3328>, 0x5b73e0 <exec_byte_code+3227>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b7601 <exec_byte_code+3772>, 0x5b768f <exec_byte_code+3914>, 0x5b7700 <exec_byte_code+4027>, 0x5b773c <exec_byte_code+4087>, 0x5b7778 <exec_byte_code+4147>, 0x5b6a75 <exec_byte_code+816>, 0x5b6b7b <exec_byte_code+1078>, 0x5b77b9 <exec_byte_code+4212>, 0x5b6a37 <exec_byte_code+754>, 0x5b6bb4 <exec_byte_code+1135>, 0x5b77e4 <exec_byte_code+4255>, 0x5b781d <exec_byte_code+4312>, 0x5b7846 <exec_byte_code+4353>, 0x5b787f <exec_byte_code+4410>, 0x5b78b5 <exec_byte_code+4464>, 0x5b792d <exec_byte_code+4584>, 0x5b7956 <exec_byte_code+4625>, 0x5b79df <exec_byte_code+4762>, 0x5b7a6f <exec_byte_code+4906>, 0x5b7a98 <exec_byte_code+4947>, 0x5b7ac1 <exec_byte_code+4988>, 0x5b7afa <exec_byte_code+5045>, 0x5b7b33 <exec_byte_code+5102>, 0x5b7b6c <exec_byte_code+5159>, 0x5b7ba9 <exec_byte_code+5220>, 0x5b7bdc <exec_byte_code+5271>, 0x5b7c0f <exec_byte_code+5322>, 0x5b7c80 <exec_byte_code+5435>, 0x5b7cd4 <exec_byte_code+5519>, 0x5b7d28 <exec_byte_code+5603>, 0x5b7d85 <exec_byte_code+5696>, 0x5b7dea <exec_byte_code+5797>, 0x5b7e4f <exec_byte_code+5898>, 0x5b7eb4 <exec_byte_code+5999>, 0x5b7f19 <exec_byte_code+6100>, 0x5b7f8f <exec_byte_code+6218>, 0x5b7fed <exec_byte_code+6312>, 0x5b8064 <exec_byte_code+6431>, 0x5b80c8 <exec_byte_code+6531>, 0x5b812c <exec_byte_code+6631>, 0x5b828a <exec_byte_code+6981>, 0x5b72ed <exec_byte_code+2984>, 0x5b82cd <exec_byte_code+7048>, 0x5b82f6 <exec_byte_code+7089>, 0x5b8362 <exec_byte_code+7197>, 0x5b83a5 <exec_byte_code+7264>, 0x5b83e8 <exec_byte_code+7331>, 0x5b8411 <exec_byte_code+7372>, 0x5b843c <exec_byte_code+7415>, 0x5b8467 <exec_byte_code+7458>, 0x5b849a <exec_byte_code+7509>, 0x5b8d55 <exec_byte_code+9744>, 0x5b84c8 <exec_byte_code+7555>, 0x5b84f3 <exec_byte_code+7598>, 0x5b851e <exec_byte_code+7641>, 0x5b8549 <exec_byte_code+7684>, 0x5b8574 <exec_byte_code+7727>, 0x5b859f <exec_byte_code+7770>, 0x5b72ed <exec_byte_code+2984>, 0x5b8d55 <exec_byte_code+9744>, 0x5b85c8 <exec_byte_code+7811>, 0x5b8606 <exec_byte_code+7873>, 0x5b862f <exec_byte_code+7914>, 0x5b8658 <exec_byte_code+7955>, 0x5b8691 <exec_byte_code+8012>, 0x5b86ca <exec_byte_code+8069>, 0x5b86f3 <exec_byte_code+8110>, 0x5b871c <exec_byte_code+8151>, 0x5b8755 <exec_byte_code+8208>, 0x5b878e <exec_byte_code+8265>, 0x5b87c7 <exec_byte_code+8322>, 0x5b87f2 <exec_byte_code+8365>, 0x5b8d55 <exec_byte_code+9744>, 0x5b728f <exec_byte_code+2890>, 0x5b7052 <exec_byte_code+2317>, 0x5b69e5 <exec_byte_code+672>, 0x5b70d0 <exec_byte_code+2443>, 0x5b7122 <exec_byte_code+2525>, 0x5b716d <exec_byte_code+2600>, 0x5b71b8 <exec_byte_code+2675>, 0x5b7270 <exec_byte_code+2859>, 0x5b6ccb <exec_byte_code+1414>, 0x5b72ce <exec_byte_code+2953>, 0x5b7319 <exec_byte_code+3028>, 0x5b7376 <exec_byte_code+3121>, 0x5b73a2 <exec_byte_code+3165>, 0x5b74d6 <exec_byte_code+3473>, 0x5b7522 <exec_byte_code+3549>, 0x5b755f <exec_byte_code+3610>, 0x5b75a8 <exec_byte_code+3683>, 0x5b8d55 <exec_byte_code+9744>, 0x5b881b <exec_byte_code+8406>, 0x5b8858 <exec_byte_code+8467>, 0x5b8881 <exec_byte_code+8508>, 0x5b88aa <exec_byte_code+8549>, 0x5b88d3 <exec_byte_code+8590>, 0x5b88fc <exec_byte_code+8631>, 0x5b8935 <exec_byte_code+8688>, 0x5b896e <exec_byte_code+8745>, 0x5b89a7 <exec_byte_code+8802>, 0x5b89e0 <exec_byte_code+8859>, 0x5b8a70 <exec_byte_code+9003>, 0x5b8aa9 <exec_byte_code+9060>, 0x5b8ae2 <exec_byte_code+9117>, 0x5b8b0b <exec_byte_code+9158>, 0x5b8b70 <exec_byte_code+9259>, 0x5b8bd5 <exec_byte_code+9360>, 0x5b8c0e <exec_byte_code+9417>, 0x5b8c47 <exec_byte_code+9474>, 0x5b81a6 <exec_byte_code+6753>, 0x5b8226 <exec_byte_code+6881>, 0x5b8c7a <exec_byte_code+9525>, 0x5b8cea <exec_byte_code+9637>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b78ef <exec_byte_code+4522>, 0x5b7c42 <exec_byte_code+5373>, 0x5b8324 <exec_byte_code+7135>, 0x5b8e1d <exec_byte_code+9944>, 0x5b8e5b <exec_byte_code+10006>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8ea4 <exec_byte_code+10079>, 0x5b8eeb <exec_byte_code+10150>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b8d55 <exec_byte_code+9744>, 0x5b902b <exec_byte_code+10470> <repeats 64 times>}
+        quitcounter = 212 '\324'
+        bc = 0xaf8930 <main_thread+496>
+        top = 0x7f6eb03d21a8
+        pc = 0x7f6eb1067265 "\266\003\202\177\003\353\002\206\017\002\n\211A\022\242!\352\001!\354\001!\357\001!\203\037\002\211\262\002\016A\360\232\203.\002\361\002!\266\004\202\177\003\362\002!\266\004\202\177\003\334\026B\001\206B\002\n\211A\022\242\262\n\006\t;\204N\002\335\363!\210\364\353\006\v!!\210\202\177\003\016A\365\232\204f\002\016A\366\232\203r\002\001\204\177\003\n\210\nA\022\202\177\003\016A\367\267\202\207\002\370\334!\210\202\177\003\371\372!\210\202\177\003\324\373\016A\"\203\231\002\005\374\016A!\240\210\202\177\003\324\375\016A\"\203\270\002\005\374\330\331\016A\"!\240\210\004\374\330\376\016A\"!\240\210\202\177\003\337\003\r\"\211\262\v\203\314\002\006\tA@\n\233"...
+        bytestr = <optimized out>
+        vector = <optimized out>
+        maxdepth = <optimized out>
+        bytestr_length = <optimized out>
+        vectorp = 0x7f6eb0a15be8
+        max_stack = <optimized out>
+        frame_base = <optimized out>
+        fp = <optimized out>
+        bytestr_data = <optimized out>
+        rest = <optimized out>
+        mandatory = <optimized out>
+        nonrest = <optimized out>
+        pushedargs = <optimized out>
+        result = <optimized out>
+#41 0x000000000057abab in fetch_and_exec_byte_code (args=0x7ffe52a95740, nargs=0, args_template=0, fun=0x7f6eb0a00c45) at eval.c:3081
+        val = <optimized out>
+        syms_left = <optimized out>
+        next = <optimized out>
+        lexenv = <optimized out>
+        i = <optimized out>
+        optional = <optimized out>
+        rest = <optimized out>
+        previous_rest = <optimized out>
+#42 funcall_lambda (fun=fun@entry=0x7f6eb0a00c45, nargs=nargs@entry=0, arg_vector=arg_vector@entry=0x7ffe52a95740) at eval.c:3153
+        val = <optimized out>
+        syms_left = <optimized out>
+        next = <optimized out>
+        lexenv = <optimized out>
+        i = <optimized out>
+        optional = <optimized out>
+        rest = <optimized out>
+        previous_rest = <optimized out>
+#43 0x000000000057b850 in apply_lambda (fun=fun@entry=0x7f6eb0a00c45, args=<optimized out>, count=count@entry=...) at eval.c:3103
+        arg_vector = 0x7ffe52a95740
+        tem = <optimized out>
+        sa_avail = <optimized out>
+        sa_count = {bytes = 160}
+        numargs = 0
+        args_left = 0x0
+#44 0x000000000057a478 in eval_sub (form=form@entry=0x7f6eb0f993bb) at eval.c:2545
+        original_fun = 0x7f6eafe7dc30
+        original_args = 0x0
+        fun = 0x7f6eb0a00c45
+        val = <optimized out>
+        funcar = <optimized out>
+        argvals = {0x93c0, 0x565581 <set_internal+1365>, 0x11, 0xfffffffffffffec0, 0x0, 0xb8c3a0 <lispsym+37824>, 0x93c0, 0x0}
+#45 0x000000000057c6a3 in Feval (form=0x7f6eb0f993bb, lexical=lexical@entry=0x0) at eval.c:2361
+#46 0x00000000004f4908 in top_level_2 () at keyboard.c:1142
+#47 0x00000000005755e0 in internal_condition_case (bfun=bfun@entry=0x4f48f3 <top_level_2>, handlers=handlers@entry=0x90, hfun=hfun@entry=0x4f909c <cmd_error>) at eval.c:1474
+        val = <optimized out>
+        c = 0x1ee94f0
+#48 0x00000000004f4859 in top_level_1 (ignore=ignore@entry=0x0) at keyboard.c:1150
+#49 0x0000000000575557 in internal_catch (tag=tag@entry=0xf7e0, func=func@entry=0x4f4837 <top_level_1>, arg=arg@entry=0x0) at eval.c:1197
+        val = <optimized out>
+        c = 0x1ec9730
+#50 0x00000000004f47e3 in command_loop () at keyboard.c:1110
+#51 0x00000000004f8cc6 in recursive_edit_1 () at keyboard.c:720
+        val = <optimized out>
+#52 0x00000000004f8fda in Frecursive_edit () at keyboard.c:803
+        buffer = <optimized out>
+#53 0x00000000004f3d43 in main (argc=<optimized out>, argv=0x7ffe52a95ba8) at emacs.c:2521
+        stack_bottom_variable = 0x7
+        no_loadup = false
+        junk = 0x0
+        dname_arg = 0x0
+        ch_to_dir = 0x0
+        original_pwd = <optimized out>
+        dump_mode = <optimized out>
+        skip_args = 1
+        temacs = 0x0
+        attempt_load_pdump = <optimized out>
+        only_version = false
+        rlim = {rlim_cur = 10022912, rlim_max = 18446744073709551615}
+        lc_all = <optimized out>
+        sockfd = -1
+        module_assertions = <optimized out>
