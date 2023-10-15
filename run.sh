@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-docker build -f ./shared.dockerfile -t emacs-29-bugreport-shared:latest .
 docker build -f ./non-pgtk.dockerfile -t emacs-29-bugreport-non-pgtk:latest .
 docker build -f ./pgtk.dockerfile -t emacs-29-bugreport-pgtk:latest .
 

@@ -18,13 +18,13 @@ script demonstrates that the crash occurs with a PGTK build of Emacs and
 the latest commits from the tree-sitter-hcl repo and does not occur with
 the v1.1.0 release of the grammar or with a non-PGTK build of Emacs.
 
-The script builds three container images. The ~shared~ image is used as
-the base for building the ~pgtk~ and ~non-pgtk~ images.
+The script builds two container images, one with a PGTK build of Emacs
+and one with a non-PGTK build of Emacs.
 
 The ~test-files~ dir in this repo contains a sample HCL file and an
 Emacs Lisp file with code that reproduces the crash when trying to parse
-that file. These files are =COPY='d into the base container image at
-~/test~, which is set as the =WORKINGDIR=.
+that file. These files are =COPY='d into the container image at ~/test~,
+which is set as the =WORKINGDIR=.
 
 The environment variable ~TREE_SITTER_HCL_REF~ can be used to change the
 ref checked out when the grammar is installed by
@@ -36,66 +36,90 @@ building the shared container is very slow.
 
 * Environment info
 Output of ~M-x emacs-version~ in the most minimal environment in which I
-reproduced this crash (the ~pgtk.dockerfile~ in this repo)
+reproduced this crash (the ~pgtk.dockerfile~ in this repo). This matches
+the environment of the system I am running, which is using the Sway spin
+of Fedora 38. I have also observed the crash when running a PGTK build
+of Emacs in WSL2 on Windows, but I do not have access to that machine as
+I am writing this and so cannot provide full info.
+
+The version of ~libtree-sitter~ is ~0.20.8~.
 
 #+begin_src sh :results output replace
 docker container run --rm emacs-29-bugreport-pgtk:latest \
-    emacs --batch \
-    -eval '(princ (emacs-version))' \
-    -eval '(princ "\n")' \
-    -eval '(princ system-configuration-options)' \
-    -eval '(princ "\n")' \
-    -eval '(princ system-configuration-features)'
+    emacs --batch -l print-emacs-info.el -eval '(print-emacs-info (current-buffer))'
 #+end_src
 
-#+RESULTS:
-: GNU Emacs 29.1.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.38, cairo version 1.17.8)
-:  of 2023-10-14
-: --with-tree-sitter --with-pgtk CFLAGS=-g
-: CAIRO DBUS FREETYPE GLIB GMP GNUTLS GSETTINGS HARFBUZZ JPEG LIBSELINUX LIBXML2 MODULES NOTIFY INOTIFY PDUMPER PGTK PNG SECCOMP SOUND THREADS TIFF TOOLKIT_SCROLL_BARS TREE_SITTER XIM GTK3 ZLIB
-
-At time of writing, Emacs is built from commit ~8141d73~ within the
-containers.
-
-Operating systm info from the container:
-
-#+begin_src sh :results output replace
-docker container run -it --rm emacs-29-bugreport-pgtk:latest \
-    cat /etc/os-release
-#+end_src
-
-#+RESULTS:
 #+begin_example
-NAME="Fedora Linux"
-VERSION="38 (Container Image)"
-ID=fedora
-VERSION_ID=38
-VERSION_CODENAME=""
-PLATFORM_ID="platform:f38"
-PRETTY_NAME="Fedora Linux 38 (Container Image)"
-ANSI_COLOR="0;38;2;60;110;180"
-LOGO=fedora-logo-icon
-CPE_NAME="cpe:/o:fedoraproject:fedora:38"
-DEFAULT_HOSTNAME="fedora"
-HOME_URL="https://fedoraproject.org/"
-DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f38/system-administrators-guide/"
-SUPPORT_URL="https://ask.fedoraproject.org/"
-BUG_REPORT_URL="https://bugzilla.redhat.com/"
-REDHAT_BUGZILLA_PRODUCT="Fedora"
-REDHAT_BUGZILLA_PRODUCT_VERSION=38
-REDHAT_SUPPORT_PRODUCT="Fedora"
-REDHAT_SUPPORT_PRODUCT_VERSION=38
-SUPPORT_END=2024-05-14
-VARIANT="Container Image"
-VARIANT_ID=container
+In GNU Emacs 29.1.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version
+ 3.24.38, cairo version 1.17.8) of 2023-10-15 built on 904443610a26
+Repository revision: 07c45f20fd3828548d5f0c110034e9857a94ccaf
+Repository branch: emacs-29
+System Description: Fedora Linux 38 (Container Image)
+
+Configured using:
+ 'configure --with-tree-sitter --with-pgtk CFLAGS=-g'
+
+Configured features:
+CAIRO DBUS FREETYPE GLIB GMP GNUTLS GSETTINGS HARFBUZZ JPEG LIBSELINUX LIBXML2 MODULES NOTIFY INOTIFY PDUMPER PGTK PNG SECCOMP SOUND THREADS TIFF TOOLKIT_SCROLL_BARS TREE_SITTER XIM GTK3 ZLIB
+
+Important settings:
+  locale-coding-system: nil
+
+Major mode:
+
+Minor modes in effect:
+  tooltip-mode: t
+  global-eldoc-mode: t
+  eldoc-mode: t
+  show-paren-mode: t
+  electric-indent-mode: t
+  mouse-wheel-mode: t
+  file-name-shadow-mode: t
+  line-number-mode: t
+  indent-tabs-mode: t
+  auto-composition-mode: t
+  auto-encryption-mode: t
+  auto-compression-mode: t
+
+Load-path shadows:
+None found.
+
+Features:
+(shadow emacsbug message mailcap yank-media puny dired dired-loaddefs
+rfc822 mml mml-sec password-cache epa derived epg rfc6068 epg-config
+gnus-util text-property-search time-date subr-x mm-decode mm-bodies
+mm-encode mail-parse rfc2231 mailabbrev gmm-utils mailheader
+cl-loaddefs cl-lib sendmail rfc2047 rfc2045 ietf-drums mm-util
+mail-prsvr mail-utils print-emacs-info rmc iso-transl tooltip cconv
+eldoc paren electric uniquify ediff-hook vc-hooks lisp-float-type
+elisp-mode mwheel term/pgtk-win pgtk-win term/common-win pgtk-dnd
+tool-bar dnd fontset image regexp-opt fringe tabulated-list replace
+newcomment text-mode lisp-mode prog-mode register page tab-bar
+menu-bar rfn-eshadow isearch easymenu timer select scroll-bar mouse
+jit-lock font-lock syntax font-core term/tty-colors frame minibuffer
+nadvice seq simple cl-generic indonesian philippine cham georgian
+utf-8-lang misc-lang vietnamese tibetan thai tai-viet lao korean
+japanese eucjp-ms cp51932 hebrew greek romanian slovak czech european
+ethiopic indian cyrillic chinese composite emoji-zwj charscript
+charprop case-table epa-hook jka-cmpr-hook help abbrev obarray
+oclosure cl-preloaded button loaddefs theme-loaddefs faces cus-face
+macroexp files window text-properties overlay sha1 md5 base64 format
+env code-pages mule custom widget keymap hashtable-print-readable
+backquote threads dbusbind inotify dynamic-setting system-font-setting
+font-render-setting cairo gtk pgtk multi-tty make-network-process
+emacs)
+
+Memory information:
+((conses 16 31248 14635)
+ (symbols 48 4631 0)
+ (strings 32 11459 383)
+ (string-bytes 1 330535)
+ (vectors 16 6183)
+ (vector-slots 8 86533 23005)
+ (floats 8 19 35)
+ (intervals 56 4 11)
+ (buffers 984 5))
 #+end_example
-
-This matches the environment of the system I am running, which is using
-the Sway spin of Fedora 38. I have also observed the crash when running
-a PGTK build of Emacs in WSL2 on Windows, but I do not have access to
-that machine as I am writing this and so cannot provide full info.
-
-The version of ~libtree-sitter~ is ~0.20.8~.
 
 * Debugging within the container
 ~gdb~ is included in the shared container image and can be run with
